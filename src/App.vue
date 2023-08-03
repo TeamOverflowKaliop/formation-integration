@@ -1,5 +1,5 @@
 <template>
-  <div class="site-wrapper" :class="{ 'no-scroll': state.isMenuOpen }">
+  <div class="site-wrapper">
     <Header @header:on-menu-toggle="onMenuToggle" />
     <main>
       <Homepage />
@@ -18,5 +18,11 @@ const state = reactive({
   isMenuOpen: false,
 });
 
-const onMenuToggle = (e) => (state.isMenuOpen = e);
+const onMenuToggle = (e) => {
+  if (e) {
+    document.body.classList.add('no-scroll');
+  } else {
+    document.body.classList.remove('no-scroll');
+  }
+};
 </script>
