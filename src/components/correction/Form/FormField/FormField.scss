@@ -1,0 +1,13 @@
+@use 'utilities/colors';
+
+.FormField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.FormField__label {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+}

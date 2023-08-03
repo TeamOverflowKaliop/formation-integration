@@ -1,0 +1,161 @@
+@use 'utilities/colors';
+@use 'utilities/mq';
+
+.Header {
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+}
+
+.Header__content {
+  display: flex;
+  align-items: center;
+  height: 70px;
+
+  @include mq.media('<large') {
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+
+.Header__logo {
+  z-index: 110;
+  position: relative;
+  flex-shrink: 0;
+
+  @include mq.media('>=large') {
+    margin-right: 60px;
+  }
+
+  img {
+    width: 114px;
+    height: auto;
+  }
+}
+
+.Header__nav {
+  flex-grow: 1;
+
+  @include mq.media('<large') {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transition: visibility 0s linear 0.15s;
+
+    .Header--menuOpen & {
+      visibility: visible;
+      transition: visibility 0s linear 0s;
+    }
+  }
+}
+
+.Header__navContent {
+  display: flex;
+
+  @include mq.media('<large') {
+    z-index: 2;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    padding: 100px 20px 50px;
+    background-color: colors.$darkGrey;
+    transform: translateX(100%);
+    transition: transform 0.15s ease-out;
+
+    .Header--menuOpen & {
+      transform: translateX(0);
+    }
+  }
+
+  @include mq.media('>=large') {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.Header__overlay {
+  @include mq.media('<large') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+
+    .Header--menuOpen & {
+      opacity: 1;
+    }
+  }
+}
+
+.Header__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+
+  @include mq.media('>=large') {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.Header__link {
+  font-weight: 600;
+  color: colors.$white;
+  transition: color 0.1s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: colors.$lightRed;
+    }
+  }
+}
+
+.Header__cta {
+  @include mq.media('<large') {
+    margin-top: auto;
+  }
+
+  @include mq.media('>=large') {
+    margin-left: auto;
+  }
+}
+
+.Header__tools {
+  z-index: 110;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 5px 5px 5px 16px;
+  gap: 20px;
+  background-color: colors.$white;
+  border-radius: 50px;
+
+  @include mq.media('>=large') {
+    margin-left: 30px;
+  }
+}
+
+.Header__account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  color: colors.$white;
+  background-color: colors.$lightRed;
+  border-radius: 50%;
+}

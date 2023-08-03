@@ -1,0 +1,50 @@
+@use 'utilities/mq';
+
+.DestinationsGrid {
+  margin-block: 100px;
+}
+
+.DestinationsGrid__title {
+  margin-bottom: 30px;
+
+  @include mq.media('>=small') {
+    margin-bottom: 50px;
+  }
+}
+
+.DestinationsGrid__list {
+  --columns-number: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns-number), 1fr);
+  gap: 28px;
+
+  @include mq.media('>=small') {
+    --columns-number: 2;
+  }
+
+  @include mq.media('>=large') {
+    --columns-number: 4;
+  }
+
+  .Card {
+    height: 100%;
+  }
+}
+
+.DestinationsGrid__item {
+  &:first-child {
+    @include mq.media('>=small') {
+      grid-column: span 2;
+    }
+  }
+}
+
+.DestinationsGrid__cta {
+  justify-self: center;
+  margin-top: 20px;
+
+  @include mq.media('>=small') {
+    margin-top: 50px;
+  }
+}

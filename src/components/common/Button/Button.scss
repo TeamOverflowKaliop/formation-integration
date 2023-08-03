@@ -1,0 +1,65 @@
+@use 'utilities/colors';
+
+.Button {
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 5px 35px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 9999px;
+  transition: color 0.1s ease-out, background-color 0.1s ease-out,
+    border-color 0.1s ease-out;
+}
+
+.Button--plain {
+  color: colors.$white;
+
+  &.Button--red {
+    background-color: colors.$lightRed;
+  }
+
+  &.Button--blue {
+    background-color: colors.$blue;
+  }
+
+  &.button--white {
+    color: colors.$darkGrey;
+    background-color: colors.$white;
+  }
+}
+
+.Button--outline {
+  background-color: transparent;
+
+  &.Button--red {
+    color: colors.$lightRed;
+    border-color: colors.$lightRed;
+  }
+
+  &.Button--blue {
+    color: colors.$blue;
+    border-color: colors.$blue;
+  }
+
+  &.Button--white {
+    color: colors.$white;
+    border-color: colors.$white;
+
+    @media (hover: hover) {
+      &:hover {
+        color: colors.$lightRed;
+        border-color: colors.$lightRed;
+      }
+    }
+  }
+}

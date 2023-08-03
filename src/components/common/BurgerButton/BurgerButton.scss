@@ -1,0 +1,63 @@
+@use 'utilities/colors';
+
+.BurgerButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &.BurgerButton--active {
+    .BurgerButton__content::before {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    .BurgerButton__stripe {
+      opacity: 0;
+    }
+
+    .BurgerButton__content::after {
+      top: -6px;
+      transform: rotate(45deg);
+    }
+
+    .BurgerButton__content::before,
+    .BurgerButton__content::after,
+    .BurgerButton__stripe {
+      transition: top 0.1s ease-in, transform 0.1s ease-out 0.1s,
+        opacity 0s ease-in 0.1s;
+    }
+  }
+}
+
+.BurgerButton__content {
+  display: flex;
+  flex-direction: column;
+
+  &::before,
+  &::after {
+    content: '';
+  }
+}
+
+.BurgerButton__content::before,
+.BurgerButton__content::after,
+.BurgerButton__stripe {
+  position: relative;
+  top: 0;
+  width: 20px;
+  height: 2px;
+  background-color: colors.$darkGrey;
+  border-radius: 1px;
+  transition: top 0.1s ease-out 0.1s, transform 0.1s ease-in,
+    opacity 0s ease-in 0.1s;
+}
+
+.BurgerButton__stripe {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

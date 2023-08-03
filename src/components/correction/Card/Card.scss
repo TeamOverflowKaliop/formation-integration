@@ -1,0 +1,98 @@
+@use 'utilities/colors';
+@use 'utilities/mq';
+
+.Card {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+
+  @media (hover: hover) {
+    &:hover {
+      .Card__image img {
+        scale: 1.1;
+      }
+    }
+  }
+}
+
+.Card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 5px;
+  padding: 15px;
+}
+
+.Card__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.Card__link {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.Card__total {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: colors.$lightRed;
+}
+
+.Card__description {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.Card__infos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.Card__rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.Card__price {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.Card__image {
+  height: 235px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.3s ease-out;
+  }
+}
+
+// Horizontal variant styles
+.Card--horizontal {
+  @include mq.media('>=small') {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+
+    .Card__image {
+      flex-shrink: 0;
+      width: 300px;
+      height: 100%;
+      min-height: 235px;
+    }
+  }
+}
