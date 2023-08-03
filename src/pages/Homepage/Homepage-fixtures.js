@@ -25,7 +25,7 @@ export const destinationsGrid = {
   destinations: [
     {
       image: {
-        src: 'https://picsum.photos/750/340?random=1',
+        src: '/images/paris.jpeg',
         alt: 'Tour Eiffel',
       },
       title: 'Paris, France',
@@ -38,7 +38,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: 'https://picsum.photos/750/340?random=2',
+        src: '/images/londres.jpeg',
         alt: 'Bus de Londres',
       },
       title: 'London, Royaume-Uni',
@@ -49,7 +49,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: 'https://picsum.photos/750/340?random=3',
+        src: '/images/hachioji.jpeg',
         alt: 'Mer du Japon',
       },
       title: 'Hachioji, Japon',
@@ -60,7 +60,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: 'https://picsum.photos/750/340?random=4',
+        src: '/images/barcelone.jpeg',
         alt: 'Plage de Barcelone',
       },
       title: 'Barcelone, Espagne',
@@ -71,7 +71,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: 'https://picsum.photos/750/340?random=5',
+        src: '/images/porto.jpeg',
         alt: 'Port de Porto',
       },
       title: 'Porto, Portugal',
@@ -82,7 +82,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: 'https://picsum.photos/750/340?random=6',
+        src: '/images/marrakech.jpeg',
         alt: 'Mosquée de Marrakech',
       },
       title: 'Marrakech, Maroc',
@@ -93,7 +93,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: 'https://picsum.photos/750/340?random=7',
+        src: '/images/bali.jpeg',
         alt: 'Temple indonésien',
       },
       title: 'Bali, Indonésie',
