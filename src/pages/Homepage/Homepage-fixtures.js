@@ -5,14 +5,14 @@ export const hero = {
   title:
     'Recherchez des offres sur des <b>hôtels</b>, des <b>hébergements indépendants</b> et <b>plus encore</b>',
   image: {
-    src: 'https://picsum.photos/id/622/1920/700',
+    src: '/images/hero-large.jpeg',
     sources: [
       {
-        srcset: 'https://picsum.photos/id/622/800/450',
+        srcset: '/images/hero-small.jpeg',
         media: '(max-width: 768px)',
       },
       {
-        srcset: 'https://picsum.photos/id/622/1920/700',
+        srcset: '/images/hero-large.jpeg',
         media: '(min-width: 769px)',
       },
     ],

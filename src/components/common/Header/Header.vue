@@ -33,7 +33,7 @@
             class="Header__overlay"
             aria-hidden="true"
             role="button"
-            @click="state.isMenuOpen = false"
+            @click="toggleMenu(false)"
           ></div>
         </nav>
         <div class="Header__tools">
@@ -57,6 +57,8 @@ import { BurgerButton, Button, Icon } from '@/components';
 import { buttonColor, buttonVariant } from '@/enums/button';
 import { iconEnum } from '@/enums/icon';
 
+const emit = defineEmits(['header:on-menu-toggle']);
+
 const menu = [
   { label: 'Hébergements', url: '#' },
   { label: 'Vols', url: '#' },
@@ -70,7 +72,11 @@ const state = reactive({
   isMenuOpen: false,
 });
 
-const toggleMenu = (isActive) => (state.isMenuOpen = isActive);
+const toggleMenu = (isActive) => {
+  state.isMenuOpen = isActive;
+
+  emit('header:on-menu-toggle', state.isMenuOpen);
+};
 </script>
 
 <style lang="scss">

@@ -13,7 +13,7 @@
 
   &::before {
     content: '';
-    z-index: 1;
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,6 +28,7 @@
 }
 
 .Hero__image img {
+  z-index: -2;
   position: absolute;
   top: 0;
   left: 0;
@@ -37,8 +38,6 @@
 }
 
 .Hero__text {
-  z-index: 2;
-  position: relative;
   display: flex;
   align-items: flex-end;
   max-width: 900px;

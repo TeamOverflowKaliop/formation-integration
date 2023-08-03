@@ -2,7 +2,7 @@
   <div class="homepage">
     <Hero v-bind="hero" />
     <DestinationsGrid v-bind="destinationsGrid" />
-    <!-- <Register v-bind="register" /> -->
+    <Register v-bind="register" />
     <AccomodationList v-bind="accomodationsList" />
     <Content v-bind="content" />
   </div>
