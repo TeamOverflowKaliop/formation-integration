@@ -28,7 +28,7 @@ import { Icon, Image } from '@/components';
 import { iconEnum } from '@/enums/icon';
 import { cardVariant } from '@/enums/card';
 
-defineProps({
+const props = defineProps({
   image: {
     type: Object,
     required: true,

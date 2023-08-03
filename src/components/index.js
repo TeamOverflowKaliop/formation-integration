@@ -15,6 +15,7 @@ export { default as DestinationsGrid } from './correction/DestinationsGrid/Desti
 export { default as FormField } from './correction/Form/FormField/FormField.vue';
 export { default as FormInput } from './correction/Form/FormInput/FormInput.vue';
 export { default as Hero } from './correction/Hero/Hero.vue';
+export { default as Modal } from './correction/Modal/Modal.vue';
 export { default as Register } from './correction/Register/Register.vue';
 
 // Live components

@@ -8,7 +8,7 @@
       >
         <Card
           v-bind="destination"
-          :variant="i === 0 ? cardVariant.HORIZONTAL : undefined"
+          :variant="i === 0 ? cardVariant.HORIZONTAL : cardVariant.VERTICAL"
         />
       </li>
     </ul>
