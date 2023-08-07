@@ -17,7 +17,7 @@ const state = reactive({
   isMenuOpen: false,
 });
 
-const modalTitle = 'Politique de confidentiacrosslité';
+const modalTitle = 'Politique de confidentialité';
 
 const onMenuToggle = (e) => {
   if (e) {

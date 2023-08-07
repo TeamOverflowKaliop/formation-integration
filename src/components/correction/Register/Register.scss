@@ -9,20 +9,20 @@
   padding: 50px 20px;
   background-color: colors.$platiniumGrey;
 
-  @include mq.media('<medium') {
-    grid-column: 1 / -1;
+  @include mq.media('<small') {
+    .container & {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include mq.media('>=small') {
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 16px;
   }
 
   @include mq.media('>=medium') {
     flex-direction: row;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-}
-
-.container .Register__content {
-  @include mq.media('<medium') {
-    grid-column: 1 / -1;
   }
 }
 
