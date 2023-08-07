@@ -25,7 +25,7 @@ export const destinationsGrid = {
   destinations: [
     {
       image: {
-        src: '/images/paris.jpeg',
+        src: '/images/paris-small.jpeg',
         alt: 'Tour Eiffel',
       },
       title: 'Paris, France',
@@ -38,7 +38,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: '/images/londres.jpeg',
+        src: '/images/londres-small.jpeg',
         alt: 'Bus de Londres',
       },
       title: 'London, Royaume-Uni',
@@ -49,7 +49,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: '/images/hachioji.jpeg',
+        src: '/images/hachioji-small.jpeg',
         alt: 'Mer du Japon',
       },
       title: 'Hachioji, Japon',
@@ -60,7 +60,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: '/images/barcelone.jpeg',
+        src: '/images/barcelone-small.jpeg',
         alt: 'Plage de Barcelone',
       },
       title: 'Barcelone, Espagne',
@@ -71,7 +71,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: '/images/porto.jpeg',
+        src: '/images/porto-small.jpeg',
         alt: 'Port de Porto',
       },
       title: 'Porto, Portugal',
@@ -82,7 +82,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: '/images/marrakech.jpeg',
+        src: '/images/marrakech-small.jpeg',
         alt: 'Mosquée de Marrakech',
       },
       title: 'Marrakech, Maroc',
@@ -93,7 +93,7 @@ export const destinationsGrid = {
     },
     {
       image: {
-        src: '/images/bali.jpeg',
+        src: '/images/bali-small.jpeg',
         alt: 'Temple indonésien',
       },
       title: 'Bali, Indonésie',
