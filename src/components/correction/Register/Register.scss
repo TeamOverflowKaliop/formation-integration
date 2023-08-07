@@ -43,7 +43,7 @@
 }
 
 .Register__form > * {
-  @include grid.cell(12);
+  @include grid.cell(12, $gutters: 20px);
 }
 
 .Register__form > *:nth-child(2),

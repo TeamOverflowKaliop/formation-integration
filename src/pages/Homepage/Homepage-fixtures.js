@@ -1,5 +1,6 @@
 import { buttonColor } from '@/enums/button';
 import { iconEnum } from '@/enums/icon';
+import { inputType } from '@/enums/form';
 
 export const hero = {
   title:
@@ -169,7 +170,7 @@ export const register = {
     {
       id: 'gender',
       label: 'Genre',
-      type: 'radio',
+      type: inputType.RADIO,
       options: [
         { label: 'Mme', value: 'mme' },
         { label: 'Mr', value: 'mr' },
@@ -193,7 +194,7 @@ export const register = {
     {
       id: 'email',
       label: 'Email',
-      type: 'email',
+      type: inputType.EMAIL,
       inputAttributes: {
         placeholder: 'Email',
         required: true,
@@ -202,7 +203,7 @@ export const register = {
     {
       id: 'origin',
       label: 'Comment-nous avez vous connu',
-      type: 'select',
+      type: inputType.SELECT,
       options: [
         { label: 'Site web', value: 'website' },
         { label: 'Newsletter', value: 'newsletter' },

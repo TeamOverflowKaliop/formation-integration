@@ -12,8 +12,11 @@ export { default as Image } from './common/Image/Image.vue';
 // Correction components
 export { default as Card } from './correction/Card/Card.vue';
 export { default as DestinationsGrid } from './correction/DestinationsGrid/DestinationsGrid.vue';
+export { default as FormCheckbox } from './correction/Form/FormCheckbox/FormCheckbox.vue';
 export { default as FormField } from './correction/Form/FormField/FormField.vue';
 export { default as FormInput } from './correction/Form/FormInput/FormInput.vue';
+export { default as FormRadio } from './correction/Form/FormRadio/FormRadio.vue';
+export { default as FormSelect } from './correction/Form/FormSelect/FormSelect.vue';
 export { default as Hero } from './correction/Hero/Hero.vue';
 export { default as Modal } from './correction/Modal/Modal.vue';
 export { default as Register } from './correction/Register/Register.vue';
