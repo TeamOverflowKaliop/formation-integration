@@ -168,16 +168,18 @@ export const register = {
     'Inscrivez-vous et profitez de toutes nos offres et réductions dès maintenant !',
   fields: [
     {
-      id: 'gender',
-      label: 'Genre',
+      name: 'gender',
       type: inputType.RADIO,
-      options: [
-        { label: 'Mme', value: 'mme' },
-        { label: 'Mr', value: 'mr' },
-        { label: 'Mx', value: 'mx' },
-      ],
+      inputAttributes: {
+        options: [
+          { label: 'Mme', value: 'mme', id: 'register-mme' },
+          { label: 'Mr', value: 'mr', id: 'register-mr' },
+          { label: 'Mx', value: 'mx', id: 'register-mx' },
+        ],
+      },
     },
     {
+      name: 'firstname',
       id: 'firstname',
       label: 'Prénom',
       inputAttributes: {
@@ -185,6 +187,7 @@ export const register = {
       },
     },
     {
+      name: 'lastname',
       id: 'lastname',
       label: 'Nom',
       inputAttributes: {
@@ -192,6 +195,7 @@ export const register = {
       },
     },
     {
+      name: 'email',
       id: 'email',
       label: 'Email',
       type: inputType.EMAIL,
@@ -201,20 +205,30 @@ export const register = {
       },
     },
     {
+      name: 'origin',
       id: 'origin',
       label: 'Comment-nous avez vous connu',
       type: inputType.SELECT,
-      options: [
-        { label: 'Site web', value: 'website' },
-        { label: 'Newsletter', value: 'newsletter' },
-        { label: 'Bouche à oreille', value: 'friends' },
-        { label: 'Media', value: 'media' },
-      ],
+      inputAttributes: {
+        options: [
+          {
+            label: 'Comment-nous avez vous connu',
+            value: '',
+            disabled: true,
+            selected: true,
+          },
+          { label: 'Site web', value: 'website' },
+          { label: 'Newsletter', value: 'newsletter' },
+          { label: 'Bouche à oreille', value: 'friends' },
+          { label: 'Media', value: 'media' },
+        ],
+      },
     },
     {
+      name: 'legal',
       id: 'legal',
       label:
-        'Vous affirmé avoir pris connaissance de notre Politique de confidentialité.',
+        'Vous affirmez avoir pris connaissance de notre Politique de confidentialité.',
       type: 'checkbox',
     },
   ],

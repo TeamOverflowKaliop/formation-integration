@@ -1,0 +1,42 @@
+@use 'utilities/colors';
+
+$inputColor: #828282;
+
+.FormCheckbox__label {
+  display: flex;
+  column-gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  user-select: none;
+
+  input:checked + & {
+    .FormCheckbox__input {
+      border-color: colors.$blue;
+      background-color: colors.$blue;
+
+      .Icon {
+        opacity: 1;
+        scale: 1;
+      }
+    }
+  }
+}
+
+.FormCheckbox__input {
+  flex-shrink: 0;
+  display: flex;
+  width: 18px;
+  height: 18px;
+  border: 1px solid $inputColor;
+  border-radius: 3px;
+  transition: border-color .1s ease-out, background-color .1s ease-out;
+
+  .Icon {
+    width: 100%;
+    height: 100%;
+    color: colors.$white;
+    opacity: 0;
+    scale: .8;
+    transition: opacity .1s ease-out, scale .1s ease-out;
+  }
+}

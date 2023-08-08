@@ -54,3 +54,9 @@
 .Register__form > *:nth-child(5) {
   @include grid.cell(9, $gutters: 20px);
 }
+
+.Register__button {
+  @include grid.cell('fit', $gutters: 20px);
+
+  margin-top: 10px;
+}
