@@ -15,6 +15,7 @@ $inputColor: #828282;
   font-size: 1.4rem;
   font-weight: 500;
   user-select: none;
+  border-radius: 2px;
 
   input:checked + & {
     .FormRadio__input {
@@ -26,6 +27,11 @@ $inputColor: #828282;
       }
     }
   }
+
+  input:focus-visible + & {
+    outline: 1px solid colors.$blue;
+    outline-offset: 2px;
+  }
 }
 
 .FormRadio__input {
@@ -35,7 +41,7 @@ $inputColor: #828282;
   height: 14px;
   border: 1px solid $inputColor;
   border-radius: 50%;
-  transition: border-color .1s ease-out;
+  transition: border-color 0.1s ease-out;
 
   &::after {
     content: '';
@@ -48,7 +54,7 @@ $inputColor: #828282;
     border-radius: 50%;
     opacity: 0;
     translate: -50% -50%;
-    scale: .8;
-    transition: opacity .1s ease-out, scale .1s ease-out;
+    scale: 0.8;
+    transition: opacity 0.1s ease-out, scale 0.1s ease-out;
   }
 }
