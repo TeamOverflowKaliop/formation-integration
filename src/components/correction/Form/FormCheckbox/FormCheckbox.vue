@@ -30,6 +30,6 @@ defineProps({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './FormCheckbox.scss';
 </style>

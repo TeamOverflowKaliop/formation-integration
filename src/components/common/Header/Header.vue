@@ -79,6 +79,6 @@ const toggleMenu = (isActive) => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './Header.scss';
 </style>

@@ -49,6 +49,6 @@ const onSubmitForm = (event) => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './Register.scss';
 </style>

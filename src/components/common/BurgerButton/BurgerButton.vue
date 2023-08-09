@@ -41,6 +41,6 @@ const onButtonClick = () => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './BurgerButton.scss';
 </style>

@@ -25,6 +25,6 @@ defineProps({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './AccomodationList.scss';
 </style>

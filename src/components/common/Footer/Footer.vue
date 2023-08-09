@@ -101,6 +101,6 @@ const socialNetworks = [
 ];
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './Footer.scss';
 </style>

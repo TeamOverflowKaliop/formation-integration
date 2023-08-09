@@ -37,6 +37,6 @@ defineProps({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use './DestinationsGrid.scss';
 </style>
