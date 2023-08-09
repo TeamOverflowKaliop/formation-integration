@@ -27,7 +27,7 @@
   }
 }
 
-.Hero__image img {
+.Hero__image :deep(img) {
   z-index: -2;
   position: absolute;
   top: 0;

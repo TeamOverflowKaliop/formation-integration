@@ -17,7 +17,7 @@
           background-color: transparent;
         }
 
-        .AccomodationCard__image img {
+        .AccomodationCard__image :deep(img) {
           opacity: 0.8;
           filter: grayscale(20%);
         }
@@ -102,7 +102,7 @@
   font-weight: 500;
 }
 
-.AccomodationCard__image img {
+.AccomodationCard__image :deep(img) {
   z-index: -2;
   position: absolute;
   top: 0;
