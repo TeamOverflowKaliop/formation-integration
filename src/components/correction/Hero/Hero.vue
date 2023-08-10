@@ -1,6 +1,6 @@
 <template>
   <section class="Hero container">
-    <Image v-bind="image" class="Hero__image fullwidth-content" />
+    <Image v-bind="image" :preload="true" class="Hero__image" />
     <div class="Hero__text">
       <h1 class="Hero__title heading-1" v-html="title" />
     </div>

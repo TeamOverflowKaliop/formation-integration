@@ -43,5 +43,9 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  preload: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
