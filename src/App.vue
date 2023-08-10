@@ -4,20 +4,17 @@
     <Homepage />
   </main>
   <Footer />
-  <Modal :title="modalTitle">patate</Modal>
 </template>
 
 <script setup>
 import { reactive } from 'vue';
 
-import { Footer, Header, Modal } from '@/components';
+import { Footer, Header } from '@/components';
 import { Homepage } from '@/pages';
 
 const state = reactive({
   isMenuOpen: false,
 });
-
-const modalTitle = 'Politique de confidentialité';
 
 const onMenuToggle = (e) => {
   if (e) {

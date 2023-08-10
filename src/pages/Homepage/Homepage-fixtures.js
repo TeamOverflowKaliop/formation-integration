@@ -249,3 +249,9 @@ export const register = {
     },
   ],
 };
+
+export const privacyPolicy = {
+  title: 'Politique de confidentialité',
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia vel excepturi maxime soluta inventore culpa illo accusamus impedit dolorum fugit eum adipisci laboriosam, esse consequuntur repellendus unde. Error perferendis beatae placeat aliquid expedita, eveniet tempore! Quam, suscipit. Magni libero amet repellat aliquam dolore reprehenderit aspernatur incidunt at minima eos! Quos quae eaque earum necessitatibus reprehenderit autem impedit. Saepe, dolore deserunt. Magnam, odit. Nulla labore amet recusandae consectetur deleniti, explicabo molestiae animi soluta, perferendis esse sed odio atque dolore dolorum ad quos voluptatibus ipsam delectus consequatur omnis magnam libero itaque. Odio ipsum quibusdam, exercitationem nam mollitia iusto itaque quidem molestiae porro?',
+};

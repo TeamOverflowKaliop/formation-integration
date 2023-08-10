@@ -13,14 +13,26 @@
           label="Je m'inscris"
           :color="buttonColor.BLUE"
         />
+        <Button
+          type="button"
+          label="Modale"
+          @click="state.isModalOpen = true"
+        />
       </form>
     </div>
+    <Modal v-model="state.isModalOpen" :title="privacyPolicy.title">
+      {{ privacyPolicy.content }}
+    </Modal>
   </section>
 </template>
 
 <script setup>
-import { Button, FormField } from '@/components';
+import { reactive } from 'vue';
+
+import { Button, FormField, Modal } from '@/components';
 import { buttonColor } from '@/enums/button';
+
+import { privacyPolicy } from '@/pages/Homepage/Homepage-fixtures';
 
 defineProps({
   title: {
@@ -35,6 +47,10 @@ defineProps({
     type: Array,
     required: true,
   },
+});
+
+const state = reactive({
+  isModalOpen: false,
 });
 
 const onSubmitForm = (event) => {
