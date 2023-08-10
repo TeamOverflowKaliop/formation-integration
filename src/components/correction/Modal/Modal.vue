@@ -3,7 +3,7 @@
     <Transition name="fade">
       <div v-if="modelValue" class="Modal container">
         <div class="Modal__overlay fullwidth-content" @click="closeModal" />
-        <div class="Modal__body">
+        <div class="Modal__body" tabindex="-1" ref="modalBody">
           <button class="Modal__close" @click="closeModal">
             <Icon :name="iconEnum.CROSS" />
           </button>
@@ -18,12 +18,15 @@
 </template>
 
 <script setup>
+import { ref, watchEffect } from 'vue';
 import { Button, Icon } from '@/components';
 import { iconEnum } from '@/enums/icon';
 
 const emit = defineEmits(['update:modelValue']);
 
-defineProps({
+const modalBody = ref(null);
+
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -32,6 +35,12 @@ defineProps({
     type: Boolean,
     required: true,
   },
+});
+
+watchEffect(() => {
+  if (modalBody.value) {
+    modalBody.value.focus();
+  }
 });
 
 const closeModal = () => emit('update:modelValue', false);
