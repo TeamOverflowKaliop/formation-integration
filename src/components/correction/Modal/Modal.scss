@@ -3,27 +3,42 @@
 $buttonColor: #e5e5e5;
 
 .Modal {
+  z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;
+  align-items: center;
+  justify-items: center;
   width: 100%;
   height: 100%;
-  padding: 35px 20px;
-  background-color: white;
-
-  @include mq.media(">=large") { 
-    top: 50%;
-    left: 50%;
-    width: 750px;
-    height: auto;
-    padding: 35px 40px;
-    border-radius: 8px;
-    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.08),
-    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
-    transform: translate(-50%, -50%);
-  }
 }
 
+.Modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Modal__body {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  padding: 35px 20px;
+  background-color: white;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.08),
+    0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+
+  @include mq.media('<small') {
+    grid-column: 1 / -1;
+    height: 100%;
+  }
+
+  @include mq.media('>=small') {
+    padding: 35px 40px;
+    border-radius: 8px;
+  }
+}
 
 .Modal__close {
   position: absolute;
@@ -55,7 +70,7 @@ $buttonColor: #e5e5e5;
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
 .fade-enter-from,
