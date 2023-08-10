@@ -2,7 +2,7 @@
   <article class="Card" :class="[`Card--${variant}`]">
     <div class="Card__body">
       <div class="Card__content">
-        <h3 class="heading-3">
+        <h3 class="Card__title heading-3">
           <a :href="url" class="Card__link">{{ title }}</a>
         </h3>
         <p class="Card__total">{{ total }} locations</p>
@@ -18,7 +18,7 @@
         </span>
       </div>
     </div>
-    <Image class="Card__image" :src="image.src" :alt="image.alt" />
+    <Image class="Card__image" v-bind="image" />
   </article>
 </template>
 

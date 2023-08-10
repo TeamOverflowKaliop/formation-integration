@@ -25,10 +25,8 @@
   padding: 15px;
 }
 
-.Card__content {
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+.Card__title {
+  margin-bottom: 5px;
 }
 
 .Card__link {
@@ -46,6 +44,7 @@
 }
 
 .Card__description {
+  margin-top: 5px;
   font-size: 1.3rem;
   font-weight: 500;
 }

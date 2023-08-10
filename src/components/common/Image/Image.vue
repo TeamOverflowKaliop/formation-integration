@@ -7,7 +7,13 @@
         :srcset="source.srcset"
       />
     </template>
-    <img :src="src" :alt="alt" :loading="lazy ? 'lazy' : 'eager'" />
+    <img
+      :src="src"
+      :alt="alt"
+      :width="width"
+      :height="height"
+      :loading="lazy ? 'lazy' : 'eager'"
+    />
   </picture>
 </template>
 
@@ -20,6 +26,14 @@ defineProps({
   alt: {
     type: String,
     default: '',
+  },
+  width: {
+    type: Number,
+    default: 0,
+  },
+  height: {
+    type: Number,
+    default: 0,
   },
   sources: {
     type: Array,

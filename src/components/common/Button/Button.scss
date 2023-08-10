@@ -26,15 +26,33 @@
 
   &.Button--red {
     background-color: colors.$lightRed;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: darken(colors.$lightRed, 3);
+      }
+    }
   }
 
   &.Button--blue {
     background-color: colors.$blue;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: darken(colors.$blue, 3);
+      }
+    }
   }
 
   &.button--white {
     color: colors.$darkGrey;
     background-color: colors.$white;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: darken(colors.$white, 3);
+      }
+    }
   }
 }
 
@@ -44,11 +62,25 @@
   &.Button--red {
     color: colors.$lightRed;
     border-color: colors.$lightRed;
+
+    @media (hover: hover) {
+      &:hover {
+        color: colors.$white;
+        border-color: colors.$white;
+      }
+    }
   }
 
   &.Button--blue {
     color: colors.$blue;
     border-color: colors.$blue;
+
+    @media (hover: hover) {
+      &:hover {
+        color: colors.$white;
+        border-color: colors.$white;
+      }
+    }
   }
 
   &.Button--white {

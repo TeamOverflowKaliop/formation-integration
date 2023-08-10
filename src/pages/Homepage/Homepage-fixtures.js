@@ -7,6 +7,8 @@ export const hero = {
     'Recherchez des offres sur des <b>hôtels</b>, des <b>hébergements indépendants</b> et <b>plus encore</b>',
   image: {
     src: '/images/hero-large.jpeg',
+    width: 1920,
+    height: 697,
     sources: [
       {
         srcset: '/images/hero-small.jpeg',
@@ -28,6 +30,8 @@ export const destinationsGrid = {
       image: {
         src: '/images/paris-small.jpeg',
         alt: 'Tour Eiffel',
+        width: 750,
+        height: 563,
       },
       title: 'Paris, France',
       url: '#',
@@ -41,6 +45,8 @@ export const destinationsGrid = {
       image: {
         src: '/images/londres-small.jpeg',
         alt: 'Bus de Londres',
+        width: 750,
+        height: 500,
       },
       title: 'London, Royaume-Uni',
       url: '#',
@@ -52,6 +58,8 @@ export const destinationsGrid = {
       image: {
         src: '/images/hachioji-small.jpeg',
         alt: 'Mer du Japon',
+        width: 750,
+        height: 420,
       },
       title: 'Hachioji, Japon',
       url: '#',
@@ -63,6 +71,8 @@ export const destinationsGrid = {
       image: {
         src: '/images/barcelone-small.jpeg',
         alt: 'Plage de Barcelone',
+        width: 750,
+        height: 422,
       },
       title: 'Barcelone, Espagne',
       url: '#',
@@ -74,6 +84,8 @@ export const destinationsGrid = {
       image: {
         src: '/images/porto-small.jpeg',
         alt: 'Port de Porto',
+        width: 750,
+        height: 422,
       },
       title: 'Porto, Portugal',
       url: '#',
@@ -85,6 +97,8 @@ export const destinationsGrid = {
       image: {
         src: '/images/marrakech-small.jpeg',
         alt: 'Mosquée de Marrakech',
+        width: 750,
+        height: 500,
       },
       title: 'Marrakech, Maroc',
       url: '#',
@@ -96,6 +110,8 @@ export const destinationsGrid = {
       image: {
         src: '/images/bali-small.jpeg',
         alt: 'Temple indonésien',
+        width: 750,
+        height: 500,
       },
       title: 'Bali, Indonésie',
       url: '#',
