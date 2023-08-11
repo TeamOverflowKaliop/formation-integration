@@ -6,7 +6,7 @@ export const hero = {
   title:
     'Recherchez des offres sur des <b>hôtels</b>, des <b>hébergements indépendants</b> et <b>plus encore</b>',
   image: {
-    src: '/images/hero-large.webp',
+    src: '/images/hero-large.jpg',
     width: 1920,
     height: 860,
     sources: [
@@ -16,6 +16,14 @@ export const hero = {
       },
       {
         srcset: '/images/hero-large.webp',
+        media: '(min-width: 769px)',
+      },
+      {
+        srcset: '/images/hero-small.jpg',
+        media: '(max-width: 768px)',
+      },
+      {
+        srcset: '/images/hero-large.jpg',
         media: '(min-width: 769px)',
       },
     ],
