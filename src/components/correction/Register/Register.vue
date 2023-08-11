@@ -20,16 +20,19 @@
         />
       </form>
     </div>
-    <Modal v-model="state.isModalOpen" :title="privacyPolicy.title">
+    <ModalCustom v-model="state.isModalOpen" :title="privacyPolicy.title">
       {{ privacyPolicy.content }}
-    </Modal>
+    </ModalCustom>
+    <!-- <ModalNative v-model="state.isModalOpen" :title="privacyPolicy.title">
+      {{ privacyPolicy.content }}
+    </ModalNative> -->
   </section>
 </template>
 
 <script setup>
 import { reactive } from 'vue';
 
-import { Button, FormField, Modal } from '@/components';
+import { Button, FormField, ModalCustom, ModalNative } from '@/components';
 import { buttonColor } from '@/enums/button';
 
 import { privacyPolicy } from '@/pages/Homepage/Homepage-fixtures';

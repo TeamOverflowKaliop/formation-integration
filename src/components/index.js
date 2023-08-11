@@ -18,7 +18,8 @@ export { default as FormInput } from './correction/Form/FormInput/FormInput.vue'
 export { default as FormRadio } from './correction/Form/FormRadio/FormRadio.vue';
 export { default as FormSelect } from './correction/Form/FormSelect/FormSelect.vue';
 export { default as Hero } from './correction/Hero/Hero.vue';
-export { default as Modal } from './correction/Modal/Modal.vue';
+export { default as ModalCustom } from './correction/Modal/ModalCustom/ModalCustom.vue';
+export { default as ModalNative } from './correction/Modal/ModalNative/ModalNative.vue';
 export { default as Register } from './correction/Register/Register.vue';
 
 // Live components
