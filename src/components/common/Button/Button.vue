@@ -1,5 +1,6 @@
 <template>
   <component
+    ref="button"
     :is="tag"
     class="Button"
     :class="[`Button--${color}`, `Button--${variant}`]"
@@ -9,9 +10,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 import { buttonColor, buttonVariant } from '@/enums/button';
+
+const button = ref(null);
 
 const props = defineProps({
   label: {
@@ -36,6 +39,10 @@ const props = defineProps({
     type: String,
     default: buttonVariant.PLAIN,
   },
+});
+
+defineExpose({
+  button,
 });
 
 const tag = computed(() => {

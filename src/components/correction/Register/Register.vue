@@ -17,10 +17,15 @@
           type="button"
           label="Modale"
           @click="state.isModalOpen = true"
+          ref="modalButton"
         />
       </form>
     </div>
-    <ModalCustom v-model="state.isModalOpen" :title="privacyPolicy.title">
+    <ModalCustom
+      v-model="state.isModalOpen"
+      @update:modelValue="onValueUpdate"
+      :title="privacyPolicy.title"
+    >
       {{ privacyPolicy.content }}
     </ModalCustom>
     <!-- <ModalNative v-model="state.isModalOpen" :title="privacyPolicy.title">
@@ -30,12 +35,14 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 
 import { Button, FormField, ModalCustom, ModalNative } from '@/components';
 import { buttonColor } from '@/enums/button';
 
 import { privacyPolicy } from '@/pages/Homepage/Homepage-fixtures';
+
+const modalButton = ref(null);
 
 defineProps({
   title: {
@@ -55,6 +62,12 @@ defineProps({
 const state = reactive({
   isModalOpen: false,
 });
+
+const onValueUpdate = (value) => {
+  if (!value) {
+    modalButton.value.button.focus();
+  }
+};
 
 const onSubmitForm = (event) => {
   const formData = Object.fromEntries(

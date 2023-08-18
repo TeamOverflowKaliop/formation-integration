@@ -1,8 +1,15 @@
 <template>
   <Teleport to="body">
     <Transition name="fade">
-      <div v-if="modelValue" class="ModalCustom container">
-        <div class="ModalCustom__overlay fullwidth-content" @click="closeModal" />
+      <div
+        v-if="modelValue"
+        class="ModalCustom container"
+        @keyup.esc="closeModal"
+      >
+        <div
+          class="ModalCustom__overlay fullwidth-content"
+          @click="closeModal"
+        />
         <div class="ModalCustom__body" tabindex="-1" ref="modalBody">
           <button class="ModalCustom__close" @click="closeModal">
             <Icon :name="iconEnum.CROSS" />
