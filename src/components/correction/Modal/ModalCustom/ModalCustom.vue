@@ -4,6 +4,8 @@
       <div
         v-if="modelValue"
         class="ModalCustom container"
+        role="dialog"
+        aria-modal="true"
         @keyup.esc="closeModal"
       >
         <div
@@ -26,12 +28,17 @@
 
 <script setup>
 import { ref, watchEffect } from 'vue';
+import { useFocusTrap } from '@vueuse/integrations/useFocusTrap';
 import { Button, Icon } from '@/components';
 import { iconEnum } from '@/enums/icon';
 
 const emit = defineEmits(['update:modelValue']);
 
 const modalBody = ref(null);
+
+useFocusTrap(modalBody, {
+  immediate: true,
+});
 
 const props = defineProps({
   title: {
@@ -50,7 +57,9 @@ watchEffect(() => {
   }
 });
 
-const closeModal = () => emit('update:modelValue', false);
+const closeModal = () => {
+  emit('update:modelValue', false);
+};
 </script>
 
 <style lang="scss" scoped>

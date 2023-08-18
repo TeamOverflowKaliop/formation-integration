@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/integrations": "^10.3.0",
+    "focus-trap": "^7.5.2",
     "include-media": "^2.0.0",
     "vite-plugin-svg-icons": "^2.0.1",
     "vue": "^3.3.4"
