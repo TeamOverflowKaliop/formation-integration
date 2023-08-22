@@ -5,19 +5,17 @@
         <h2 class="heading-2">{{ title }}</h2>
         <p v-if="subtitle" class="Register__subtitle">{{ subtitle }}</p>
       </div>
-      <form class="Register__form" @submit.prevent="onSubmitForm">
+      <form
+        class="Register__form"
+        @submit.prevent="onSubmitForm"
+        ref="registerForm"
+      >
         <FormField v-for="field in fields" v-bind="field" />
         <Button
           class="Register__button"
           type="submit"
           label="Je m'inscris"
           :color="buttonColor.BLUE"
-        />
-        <Button
-          type="button"
-          label="Modale"
-          @click="state.isModalOpen = true"
-          ref="modalButton"
         />
       </form>
     </div>
@@ -35,14 +33,14 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 
 import { Button, FormField, ModalCustom, ModalNative } from '@/components';
 import { buttonColor } from '@/enums/button';
 
 import { privacyPolicy } from '@/pages/Homepage/Homepage-fixtures';
 
-const modalButton = ref(null);
+const registerForm = ref(null);
 
 defineProps({
   title: {
@@ -60,12 +58,28 @@ defineProps({
 });
 
 const state = reactive({
+  modalTrigger: null,
   isModalOpen: false,
 });
 
+onMounted(() => {
+  state.modalTrigger = registerForm.value.querySelector('#access-credentials');
+
+  state.modalTrigger.addEventListener('click', (e) => openModal(e));
+
+  setTimeout(() => {
+    state.modalTrigger.removeEventListener('click', openModal);
+  }, 5000);
+});
+
+const openModal = (e) => {
+  e.stopPropagation;
+  state.isModalOpen = true;
+};
+
 const onValueUpdate = async (value) => {
   if (!value) {
-    modalButton.value.button.focus();
+    state.modalTrigger.focus();
   }
 };
 

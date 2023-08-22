@@ -1,14 +1,21 @@
 @use 'utilities/colors';
 
 $inputColor: #828282;
+$labelColor: #333333;
 
 .FormCheckbox__label {
   display: flex;
   column-gap: 10px;
   font-size: 1.2rem;
   font-weight: 500;
+  color: $labelColor;
   user-select: none;
   border-radius: 2px;
+
+  :deep(button) {
+    color: colors.$darkGrey;
+    text-decoration: underline;
+  }
 
   input:checked + & {
     .FormCheckbox__input {

@@ -6,15 +6,15 @@
         class="ModalCustom container"
         role="dialog"
         aria-modal="true"
-        @keyup.esc="closeModal"
         ref="modal"
+        @keydown.esc="closeModal"
       >
         <div
           class="ModalCustom__overlay fullwidth-content"
           @click="closeModal"
           tabindex="-1"
         />
-        <div class="ModalCustom__body" tabindex="-1" ref="modalBody">
+        <div class="ModalCustom__body" tabindex="-1" data-modal-body>
           <button class="ModalCustom__close" @click="closeModal">
             <Icon :name="iconEnum.CROSS" />
           </button>
@@ -37,13 +37,8 @@ import { iconEnum } from '@/enums/icon';
 const emit = defineEmits(['update:modelValue']);
 
 const modal = ref(null);
-const modalBody = ref(null);
 
 const { activate, deactivate } = useFocusTrap(modal);
-
-defineExpose({
-  modal,
-});
 
 const props = defineProps({
   title: {
@@ -57,17 +52,16 @@ const props = defineProps({
 });
 
 watchEffect(async () => {
-  if (modalBody.value) {
+  if (modal.value) {
     await nextTick();
     activate();
 
-    modalBody.value.focus();
+    modal.value.querySelector('[data-modal-body]').focus();
   }
 });
 
 const closeModal = () => {
   deactivate();
-
   emit('update:modelValue', false);
 };
 </script>

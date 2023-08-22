@@ -252,7 +252,7 @@ export const register = {
       name: 'legal',
       id: 'legal',
       label:
-        'Vous affirmez avoir pris connaissance de notre <button id="access-credentials">Politique de confidentialité</button>.',
+        'Vous affirmez avoir pris connaissance de notre <button id="access-credentials" type="button">Politique de confidentialité</button>.',
       type: 'checkbox',
     },
   ],
