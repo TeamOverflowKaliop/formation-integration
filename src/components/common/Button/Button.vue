@@ -16,6 +16,10 @@ import { buttonColor, buttonVariant } from '@/enums/button';
 
 const button = ref(null);
 
+defineExpose({
+  button,
+});
+
 const props = defineProps({
   label: {
     type: String,
@@ -39,10 +43,6 @@ const props = defineProps({
     type: String,
     default: buttonVariant.PLAIN,
   },
-});
-
-defineExpose({
-  button,
 });
 
 const tag = computed(() => {

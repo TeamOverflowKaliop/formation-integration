@@ -7,10 +7,12 @@
         role="dialog"
         aria-modal="true"
         @keyup.esc="closeModal"
+        ref="modal"
       >
         <div
           class="ModalCustom__overlay fullwidth-content"
           @click="closeModal"
+          tabindex="-1"
         />
         <div class="ModalCustom__body" tabindex="-1" ref="modalBody">
           <button class="ModalCustom__close" @click="closeModal">
@@ -27,17 +29,20 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from 'vue';
+import { nextTick, ref, watchEffect } from 'vue';
 import { useFocusTrap } from '@vueuse/integrations/useFocusTrap';
 import { Button, Icon } from '@/components';
 import { iconEnum } from '@/enums/icon';
 
 const emit = defineEmits(['update:modelValue']);
 
+const modal = ref(null);
 const modalBody = ref(null);
 
-useFocusTrap(modalBody, {
-  immediate: true,
+const { activate, deactivate } = useFocusTrap(modal);
+
+defineExpose({
+  modal,
 });
 
 const props = defineProps({
@@ -51,13 +56,18 @@ const props = defineProps({
   },
 });
 
-watchEffect(() => {
+watchEffect(async () => {
   if (modalBody.value) {
+    await nextTick();
+    activate();
+
     modalBody.value.focus();
   }
 });
 
 const closeModal = () => {
+  deactivate();
+
   emit('update:modelValue', false);
 };
 </script>

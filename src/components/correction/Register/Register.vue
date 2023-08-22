@@ -63,7 +63,7 @@ const state = reactive({
   isModalOpen: false,
 });
 
-const onValueUpdate = (value) => {
+const onValueUpdate = async (value) => {
   if (!value) {
     modalButton.value.button.focus();
   }
