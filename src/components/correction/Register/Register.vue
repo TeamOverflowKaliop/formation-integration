@@ -64,12 +64,11 @@ const state = reactive({
 
 onMounted(() => {
   state.modalTrigger = registerForm.value.querySelector('#access-credentials');
+  state.modalTrigger.addEventListener('click', openModal);
+});
 
-  state.modalTrigger.addEventListener('click', (e) => openModal(e));
-
-  setTimeout(() => {
-    state.modalTrigger.removeEventListener('click', openModal);
-  }, 5000);
+onUnmounted(() => {
+  state.modalTrigger.removeEventListener('click', openModal);
 });
 
 const openModal = (e) => {
