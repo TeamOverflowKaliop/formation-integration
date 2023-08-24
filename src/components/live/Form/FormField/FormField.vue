@@ -4,25 +4,25 @@
       label
     }}</label>
     <span class="FormField__input">
-      <FormCheckbox
+      <FormCheckboxLive
         v-if="type === inputType.CHECKBOX"
         :name="name"
         :id="id"
         :label="label"
         v-bind="inputAttributes"
       />
-      <FormRadio
+      <FormRadioLive
         v-else-if="type === inputType.RADIO"
         :name="name"
         v-bind="inputAttributes"
       />
-      <FormSelect
+      <FormSelectLive
         v-else-if="type === inputType.SELECT"
         :name="name"
         :id="id"
         v-bind="inputAttributes"
       />
-      <FormInput
+      <FormInputLive
         v-else
         :name="name"
         :id="id"
@@ -34,8 +34,9 @@
 </template>
 
 <script setup>
-import { FormCheckbox, FormInput, FormRadio, FormSelect } from '@/components';
+import { FormCheckboxLive, FormInputLive, FormRadioLive, FormSelectLive } from '@/components';
 import { inputType } from '@/enums/form';
+
 defineProps({
   label: {
     type: String,

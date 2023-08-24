@@ -1,0 +1,62 @@
+@use 'utilities/colors';
+@use 'utilities/grid';
+@use 'utilities/mq';
+
+.Register__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: colors.$platiniumGrey;
+
+  @include mq.media('<small') {
+    .container & {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include mq.media('>=small') {
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 16px;
+  }
+
+  @include mq.media('>=medium') {
+    flex-direction: row;
+  }
+}
+
+.Register__text,
+.Register__form {
+  flex: 1;
+}
+
+.Register__subtitle {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.Register__form {
+  @include grid.grid($gutters: 20px);
+  row-gap: 20px;
+}
+
+.Register__form > * {
+  @include grid.cell(12, $gutters: 20px);
+}
+
+.Register__form > *:nth-child(2),
+.Register__form > *:nth-child(3) {
+  @include grid.cell(6, $gutters: 20px);
+}
+
+.Register__form > *:nth-child(5) {
+  @include grid.cell(9, $gutters: 20px);
+}
+
+.Register__button {
+  @include grid.cell('fit', $gutters: 20px);
+
+  margin-top: 10px;
+}

@@ -23,3 +23,13 @@ export { default as ModalNative } from './correction/Modal/ModalNative/ModalNati
 export { default as Register } from './correction/Register/Register.vue';
 
 // Live components
+export { default as CardLive } from './live/Card/Card.vue';
+export { default as DestinationsGridLive } from './live/DestinationsGrid/DestinationsGrid.vue';
+export { default as FormCheckboxLive } from './live/Form/FormCheckbox/FormCheckbox.vue';
+export { default as FormFieldLive } from './live/Form/FormField/FormField.vue';
+export { default as FormInputLive } from './live/Form/FormInput/FormInput.vue';
+export { default as FormRadioLive } from './live/Form/FormRadio/FormRadio.vue';
+export { default as FormSelectLive } from './live/Form/FormSelect/FormSelect.vue';
+export { default as HeroLive } from './live/Hero/Hero.vue';
+export { default as ModalLive } from './live/Modal/Modal.vue';
+export { default as RegisterLive } from './live/Register/Register.vue';

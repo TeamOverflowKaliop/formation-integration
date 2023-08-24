@@ -2,6 +2,7 @@
   <Header @header:on-menu-toggle="onMenuToggle" />
   <main>
     <Homepage />
+    <!-- <HomepageLive /> -->
   </main>
   <Footer />
 </template>
@@ -10,7 +11,7 @@
 import { reactive } from 'vue';
 
 import { Footer, Header } from '@/components';
-import { Homepage } from '@/pages';
+import { Homepage, HomepageLive } from '@/pages';
 
 const state = reactive({
   isMenuOpen: false,

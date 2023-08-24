@@ -10,7 +10,7 @@
         @submit.prevent="onSubmitForm"
         ref="registerForm"
       >
-        <FormField v-for="field in fields" v-bind="field" />
+        <FormFieldLive v-for="field in fields" v-bind="field" />
         <Button
           class="Register__button"
           type="submit"
@@ -19,23 +19,16 @@
         />
       </form>
     </div>
-    <ModalCustom
-      v-model="state.isModalOpen"
-      @update:modelValue="onValueUpdate"
-      :title="privacyPolicy.title"
-    >
+    <ModalLive v-model="state.isModalOpen" :title="privacyPolicy.title">
       {{ privacyPolicy.content }}
-    </ModalCustom>
-    <!-- <ModalNative v-model="state.isModalOpen" :title="privacyPolicy.title">
-      {{ privacyPolicy.content }}
-    </ModalNative> -->
+    </ModalLive>
   </section>
 </template>
 
 <script setup>
 import { onMounted, onUnmounted, reactive, ref } from 'vue';
 
-import { Button, FormField, ModalCustom, ModalNative } from '@/components';
+import { Button, FormFieldLive, ModalLive } from '@/components';
 import { buttonColor } from '@/enums/button';
 
 import { privacyPolicy } from '@/pages/Homepage/fixtures';
@@ -62,25 +55,25 @@ const state = reactive({
   isModalOpen: false,
 });
 
-onMounted(() => {
-  state.modalTrigger = registerForm.value.querySelector('#access-credentials');
-  state.modalTrigger.addEventListener('click', openModal);
-});
+// onMounted(() => {
+//   state.modalTrigger = registerForm.value.querySelector('#access-credentials');
+//   state.modalTrigger.addEventListener('click', openModal);
+// });
 
-onUnmounted(() => {
-  state.modalTrigger.removeEventListener('click', openModal);
-});
+// onUnmounted(() => {
+//   state.modalTrigger.removeEventListener('click', openModal);
+// });
 
 const openModal = (e) => {
   e.stopPropagation;
   state.isModalOpen = true;
 };
 
-const onValueUpdate = async (value) => {
-  if (!value) {
-    state.modalTrigger.focus();
-  }
-};
+// const onValueUpdate = async (value) => {
+//   if (!value) {
+//     state.modalTrigger.focus();
+//   }
+// };
 
 const onSubmitForm = (event) => {
   const formData = Object.fromEntries(

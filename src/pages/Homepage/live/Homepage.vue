@@ -1,8 +1,8 @@
 <template>
   <div class="homepage">
-    <Hero v-bind="hero" />
-    <DestinationsGrid v-bind="destinationsGrid" />
-    <Register v-bind="register" />
+    <HeroLive v-bind="hero" />
+    <DestinationsGridLive v-bind="destinationsGrid" />
+    <RegisterLive v-bind="register" />
     <AccomodationList v-bind="accomodationsList" />
     <Content v-bind="content" />
   </div>
@@ -12,11 +12,11 @@
 import {
   AccomodationList,
   Content,
-  DestinationsGrid,
+  DestinationsGridLive,
   Header,
-  Hero,
+  HeroLive,
   Icon,
-  Register,
+  RegisterLive,
 } from '@/components';
 
 import {
@@ -25,5 +25,5 @@ import {
   accomodationsList,
   content,
   register,
-} from './Homepage-fixtures';
+} from '@/pages/Homepage/fixtures';
 </script>
