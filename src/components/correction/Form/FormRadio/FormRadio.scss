@@ -36,7 +36,9 @@ $inputColor: #828282;
 
 .FormRadio__input {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 14px;
   height: 14px;
   border: 1px solid $inputColor;
@@ -45,15 +47,12 @@ $inputColor: #828282;
 
   &::after {
     content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 9px;
-    height: 9px;
+    display: block;
+    width: 8px;
+    height: 8px;
     background-color: colors.$blue;
     border-radius: 50%;
     opacity: 0;
-    translate: -50% -50%;
     scale: 0.8;
     transition: opacity 0.1s ease-out, scale 0.1s ease-out;
   }
