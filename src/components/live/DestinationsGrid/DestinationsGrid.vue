@@ -1,8 +1,10 @@
 <template>
-  DestinationsGrid Component
+  <CardLive v-for="destination in destinations" />
 </template>
 
 <script setup>
+import { CardLive } from '@/components';
+
 defineProps({
   title: {
     type: String,

@@ -2,7 +2,7 @@
   <Header @header:on-menu-toggle="onMenuToggle" />
   <main>
     <Homepage />
-    <!-- <HomepageLive /> -->
+    <HomepageLive />
   </main>
   <Footer />
 </template>
