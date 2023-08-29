@@ -193,6 +193,7 @@ export const register = {
   fields: [
     {
       name: 'gender',
+      legend: 'Genre',
       type: inputType.RADIO,
       inputAttributes: {
         options: [
@@ -208,6 +209,7 @@ export const register = {
       label: 'Prénom',
       inputAttributes: {
         placeholder: 'Prénom',
+        required: true,
       },
     },
     {
@@ -216,6 +218,7 @@ export const register = {
       label: 'Nom',
       inputAttributes: {
         placeholder: 'Nom',
+        required: true,
       },
     },
     {

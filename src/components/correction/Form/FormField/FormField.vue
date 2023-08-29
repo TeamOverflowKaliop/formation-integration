@@ -14,6 +14,7 @@
       <FormRadio
         v-else-if="type === inputType.RADIO"
         :name="name"
+        :legend="legend"
         v-bind="inputAttributes"
       />
       <FormSelect
@@ -42,6 +43,10 @@ defineProps({
     default: '',
   },
   name: {
+    type: String,
+    required: true,
+  },
+  legend: {
     type: String,
     required: true,
   },

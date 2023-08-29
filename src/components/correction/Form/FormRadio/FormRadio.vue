@@ -1,5 +1,6 @@
 <template>
-  <div class="FormRadio">
+  <fieldset class="FormRadio">
+    <legend class="sr-only">{{ legend }}</legend>
     <div class="FormRadio__item" v-for="option in options">
       <input
         class="sr-only"
@@ -13,12 +14,16 @@
         {{ option.label }}
       </label>
     </div>
-  </div>
+  </fieldset>
 </template>
 
 <script setup>
 defineProps({
   name: {
+    type: String,
+    required: true,
+  },
+  legend: {
     type: String,
     required: true,
   },
