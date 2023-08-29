@@ -38,25 +38,33 @@
 }
 
 .Register__form {
-  @include grid.grid($gutters: 20px);
-  row-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+
+  @include mq.media('>=small') {
+    --columns-number: 6;
+  }
 }
 
 .Register__form > * {
-  @include grid.cell(12, $gutters: 20px);
+  grid-column: span 6;
 }
 
 .Register__form > *:nth-child(2),
 .Register__form > *:nth-child(3) {
-  @include grid.cell(6, $gutters: 20px);
+  grid-column: span 3;
 }
 
 .Register__form > *:nth-child(5) {
-  @include grid.cell(9, $gutters: 20px);
+  grid-column: span 6;
+
+  @include mq.media('>=small') {
+    grid-column: span 4;
+  }
 }
 
 .Register__button {
-  @include grid.cell('fit', $gutters: 20px);
-
+  justify-self: start;
   margin-top: 10px;
 }

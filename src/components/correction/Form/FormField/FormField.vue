@@ -48,7 +48,6 @@ defineProps({
   },
   legend: {
     type: String,
-    required: true,
   },
   id: {
     type: String,
