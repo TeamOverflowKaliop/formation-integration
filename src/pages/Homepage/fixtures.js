@@ -225,9 +225,10 @@ export const register = {
       name: 'email',
       id: 'email',
       label: 'Email',
-      type: inputType.EMAIL,
       inputAttributes: {
         placeholder: 'Email',
+        pattern: "[A-Za-z0-9._+\\-']+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}",
+        title: "Veuillez renseigner un format d'email valide",
         required: true,
       },
     },
