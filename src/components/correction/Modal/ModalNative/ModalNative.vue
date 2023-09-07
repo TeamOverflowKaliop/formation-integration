@@ -1,5 +1,10 @@
 <template>
-  <dialog class="ModalNative" ref="modal" @close="closeModal">
+  <dialog
+    class="ModalNative"
+    ref="modal"
+    @close="closeModal"
+    @click="closeWithBackdrop"
+  >
     <div class="ModalNative__body" ref="modalBody">
       <button class="ModalNative__close" @click="closeModal">
         <Icon :name="iconEnum.CROSS" />
@@ -44,6 +49,12 @@ watch(
 );
 
 const closeModal = () => emit('update:modelValue', false);
+
+const closeWithBackdrop = (e) => {
+  if (e.target.nodeName === 'DIALOG') {
+    closeModal();
+  }
+};
 </script>
 
 <style lang="scss" scoped>

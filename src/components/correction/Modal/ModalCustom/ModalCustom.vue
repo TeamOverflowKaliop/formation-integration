@@ -14,8 +14,12 @@
           @click="closeModal"
           tabindex="-1"
         />
-        <div class="ModalCustom__body" tabindex="-1" data-modal-body>
-          <button class="ModalCustom__close" @click="closeModal">
+        <div class="ModalCustom__body">
+          <button
+            class="ModalCustom__close"
+            @click="closeModal"
+            data-modal-close
+          >
             <Icon :name="iconEnum.CROSS" />
           </button>
           <h1 class="ModalCustom__title">{{ title }}</h1>
@@ -56,7 +60,7 @@ watchEffect(async () => {
     await nextTick();
     activate();
 
-    modal.value.querySelector('[data-modal-body]').focus();
+    modal.value.querySelector('[data-modal-close]').focus();
   }
 });
 
