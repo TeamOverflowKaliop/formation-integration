@@ -32,6 +32,7 @@
 .Card__link {
   &::before {
     content: '';
+    z-index: 2;
     position: absolute;
     inset: 0;
   }
