@@ -6,6 +6,7 @@
 @use 'base/layouts';
 
 // Helpers
+@use 'helpers/richtext';
 @use 'helpers/scroll';
 @use 'helpers/typography';
 @use 'helpers/visibility';

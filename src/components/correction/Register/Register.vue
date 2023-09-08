@@ -24,10 +24,10 @@
       @update:modelValue="onValueUpdate"
       :title="privacyPolicy.title"
     >
-      {{ privacyPolicy.content }}
+      <div class="richtext" v-html="privacyPolicy.content" />
     </ModalCustom>
     <!-- <ModalNative v-model="state.isModalOpen" :title="privacyPolicy.title">
-      {{ privacyPolicy.content }}
+      <div class="richtext" v-html="privacyPolicy.content" />
     </ModalNative> -->
   </section>
 </template>

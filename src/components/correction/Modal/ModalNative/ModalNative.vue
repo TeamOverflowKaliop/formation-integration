@@ -19,12 +19,17 @@
 
 <script setup>
 import { ref, watch } from 'vue';
+import { useScrollLock } from '@vueuse/core';
+
 import { Button, Icon } from '@/components';
 import { iconEnum } from '@/enums/icon';
 
 const emit = defineEmits(['update:modelValue']);
 
 const modal = ref(null);
+
+const body = document.body;
+const isLocked = useScrollLock(body);
 
 const props = defineProps({
   title: {
@@ -42,8 +47,10 @@ watch(
   (value) => {
     if (value) {
       modal.value.showModal();
+      isLocked.value = true;
     } else {
       modal.value.close();
+      isLocked.value = false;
     }
   }
 );

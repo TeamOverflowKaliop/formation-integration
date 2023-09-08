@@ -52,12 +52,14 @@
 
 <script setup>
 import { reactive } from 'vue';
+import { useScrollLock } from '@vueuse/core';
 
 import { BurgerButton, Button, Icon } from '@/components';
 import { buttonColor, buttonVariant } from '@/enums/button';
 import { iconEnum } from '@/enums/icon';
 
-const emit = defineEmits(['header:on-menu-toggle']);
+const body = document.body;
+const isLocked = useScrollLock(body);
 
 const menu = [
   { label: 'Hébergements', url: '#' },
@@ -75,7 +77,11 @@ const state = reactive({
 const toggleMenu = (isActive) => {
   state.isMenuOpen = isActive;
 
-  emit('header:on-menu-toggle', state.isMenuOpen);
+  if (state.isMenuOpen) {
+    isLocked.value = true;
+  } else {
+    isLocked.value = false;
+  }
 };
 </script>
 

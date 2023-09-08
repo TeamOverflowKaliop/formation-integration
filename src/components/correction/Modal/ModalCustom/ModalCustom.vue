@@ -34,6 +34,7 @@
 
 <script setup>
 import { nextTick, ref, watchEffect } from 'vue';
+import { useScrollLock } from '@vueuse/core';
 import { useFocusTrap } from '@vueuse/integrations/useFocusTrap';
 import { Button, Icon } from '@/components';
 import { iconEnum } from '@/enums/icon';
@@ -41,8 +42,10 @@ import { iconEnum } from '@/enums/icon';
 const emit = defineEmits(['update:modelValue']);
 
 const modal = ref(null);
-
 const { activate, deactivate } = useFocusTrap(modal);
+
+const body = document.body;
+const isLocked = useScrollLock(body);
 
 const props = defineProps({
   title: {
@@ -60,12 +63,14 @@ watchEffect(async () => {
     await nextTick();
     activate();
 
+    isLocked.value = true;
     modal.value.querySelector('[data-modal-close]').focus();
   }
 });
 
 const closeModal = () => {
   deactivate();
+  isLocked.value = false;
   emit('update:modelValue', false);
 };
 </script>

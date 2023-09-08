@@ -1,0 +1,16 @@
+@use 'utilities/colors';
+
+.richtext {
+  a {
+    font-weight: 500;
+    color: colors.$lightRed;
+    text-decoration: underline;
+    transition: color 0.2s ease-out;
+
+    @media (hover: hover) {
+      &:hover {
+        color: colors.$darkGrey;
+      }
+    }
+  }
+}
