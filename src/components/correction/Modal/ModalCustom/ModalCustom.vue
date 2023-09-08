@@ -10,7 +10,7 @@
         @keydown.esc="closeModal"
       >
         <div
-          class="ModalCustom__overlay fullwidth-content"
+          class="ModalCustom__backdrop fullwidth-content"
           @click="closeModal"
           tabindex="-1"
         />
