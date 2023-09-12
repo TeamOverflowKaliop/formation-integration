@@ -1,5 +1,5 @@
 <template>
-  <div class="DestinationsGrid container">
+  <section class="DestinationsGrid container">
     <h2 class="DestinationsGrid__title heading-2" v-html="title" />
     <ul class="DestinationsGrid__list">
       <li
@@ -13,7 +13,7 @@
       </li>
     </ul>
     <Button class="DestinationsGrid__cta" v-if="cta" v-bind="cta" />
-  </div>
+  </section>
 </template>
 
 <script setup>
