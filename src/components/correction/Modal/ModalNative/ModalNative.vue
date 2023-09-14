@@ -2,14 +2,19 @@
   <dialog
     class="ModalNative"
     ref="modal"
+    aria-labelledby="modal-title"
     @close="closeModal"
     @click="closeWithBackdrop"
   >
     <div class="ModalNative__body" ref="modalBody">
-      <button class="ModalNative__close" @click="closeModal">
+      <button
+        class="ModalNative__close"
+        @click="closeModal"
+        aria-label="Fermer la modale"
+      >
         <Icon :name="iconEnum.CROSS" />
       </button>
-      <h1 class="ModalNative__title">{{ title }}</h1>
+      <h1 class="ModalNative__title" id="modal-title">{{ title }}</h1>
       <div class="ModalNative__content">
         <slot />
       </div>

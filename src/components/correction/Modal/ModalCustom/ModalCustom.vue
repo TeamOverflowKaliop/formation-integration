@@ -6,6 +6,7 @@
         class="ModalCustom container"
         role="dialog"
         aria-modal="true"
+        aria-labelledby="modal-title"
         ref="modal"
         @keydown.esc="closeModal"
       >
@@ -19,10 +20,11 @@
             class="ModalCustom__close"
             @click="closeModal"
             data-modal-close
+            aria-label="Fermer la modale"
           >
             <Icon :name="iconEnum.CROSS" />
           </button>
-          <h1 class="ModalCustom__title">{{ title }}</h1>
+          <h1 class="ModalCustom__title" id="modal-title">{{ title }}</h1>
           <div class="ModalCustom__content">
             <slot />
           </div>
