@@ -63,7 +63,13 @@ watch(
 const closeModal = () => emit('update:modelValue', false);
 
 const closeWithBackdrop = (e) => {
-  if (e.target.nodeName === 'DIALOG') {
+  const dialogDimensions = modal.value.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
     closeModal();
   }
 };
