@@ -1,8 +1,11 @@
 <template>
   <div class="FormField">
-    <label v-if="label" class="FormField__label sr-only" :for="id">{{
-      label
-    }}</label>
+    <label
+      v-if="label && type !== inputType.CHECKBOX"
+      class="FormField__label sr-only"
+      :for="id"
+      >{{ label }}</label
+    >
     <span class="FormField__input">
       <FormCheckboxLive
         v-if="type === inputType.CHECKBOX"
@@ -34,7 +37,12 @@
 </template>
 
 <script setup>
-import { FormCheckboxLive, FormInputLive, FormRadioLive, FormSelectLive } from '@/components';
+import {
+  FormCheckboxLive,
+  FormInputLive,
+  FormRadioLive,
+  FormSelectLive,
+} from '@/components';
 import { inputType } from '@/enums/form';
 
 defineProps({

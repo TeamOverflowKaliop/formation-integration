@@ -19,16 +19,16 @@
         />
       </form>
     </div>
-    <!-- <ModalCustom
+    <ModalCustom
       v-model="state.isModalOpen"
       @update:modelValue="onValueUpdate"
       :title="privacyPolicy.title"
     >
       <div class="richtext" v-html="privacyPolicy.content" />
-    </ModalCustom> -->
-    <ModalNative v-model="state.isModalOpen" :title="privacyPolicy.title">
+    </ModalCustom>
+    <!-- <ModalNative v-model="state.isModalOpen" :title="privacyPolicy.title">
       <div class="richtext" v-html="privacyPolicy.content" />
-    </ModalNative>
+    </ModalNative> -->
   </section>
 </template>
 

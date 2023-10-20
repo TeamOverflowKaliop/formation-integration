@@ -1,8 +1,11 @@
 <template>
   <div class="FormField">
-    <label v-if="label" class="FormField__label sr-only" :for="id">{{
-      label
-    }}</label>
+    <label
+      v-if="label && type !== inputType.CHECKBOX"
+      class="FormField__label sr-only"
+      :for="id"
+      >{{ label }}</label
+    >
     <span class="FormField__input">
       <FormCheckbox
         v-if="type === inputType.CHECKBOX"
